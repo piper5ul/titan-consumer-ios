@@ -27,15 +27,15 @@
     },
     "env": {
         "prod": {
-            "auth0ClientId": "YOUR_AUTH0_CLIENT_ID_PROD",
+            "auth0ClientId": "5pjTAHK7cjXIdFxmrPnL50LKcNbu2uys",
             "auth0Audience": "https://api.titanwallet.com",
-            "auth0Domain": "titan-wallet.us.auth0.com",
+            "auth0Domain": "dev-gpkn7n5wg1qsbl4g.us.auth0.com",
             "segmentKey": ""
         },
         "prodtest": {
-            "auth0ClientId": "YOUR_AUTH0_CLIENT_ID_TEST",
+            "auth0ClientId": "5pjTAHK7cjXIdFxmrPnL50LKcNbu2uys",
             "auth0Audience": "https://api-test.titanwallet.com",
-            "auth0Domain": "titan-wallet-test.us.auth0.com",
+            "auth0Domain": "dev-gpkn7n5wg1qsbl4g.us.auth0.com",
             "segmentKey": ""
         }
     },
