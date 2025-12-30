@@ -1,0 +1,48 @@
+PODS:
+  - Analytics (4.1.7)
+  - GooglePlaces (7.2.0)
+  - MercariQRScanner (1.9.0)
+  - Plaid (3.1.1)
+  - Protobuf (3.21.12)
+  - RecaptchaEnterprise (18.0.3):
+    - Protobuf (~> 3.21.3)
+  - RNCryptor (5.1.0)
+  - SwiftLint (0.47.1)
+  - TrustKit (2.0.1)
+
+DEPENDENCIES:
+  - Analytics (~> 4.1.2)
+  - GooglePlaces
+  - MercariQRScanner
+  - Plaid (~> 3.1.0)
+  - RecaptchaEnterprise (= 18.0.3)
+  - RNCryptor (~> 5.0)
+  - SwiftLint (~> 0.47.1)
+  - TrustKit
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Analytics
+    - GooglePlaces
+    - MercariQRScanner
+    - Plaid
+    - Protobuf
+    - RecaptchaEnterprise
+    - RNCryptor
+    - SwiftLint
+    - TrustKit
+
+SPEC CHECKSUMS:
+  Analytics: 3106b5af9b799c934f98a68ab8ba199f1c603fdb
+  GooglePlaces: 590dea495d69431454ea92217033c3184995165d
+  MercariQRScanner: e5aea873969af59b09b4cc411fc1c5b6293dba44
+  Plaid: d07ce91ce8d52f01fc2c5882e2335f4a5e718462
+  Protobuf: 120350fc38646e2dedc26f49ecba778184ea1de2
+  RecaptchaEnterprise: 00b69e66225630a4ad70bb5d11601121f4c8062b
+  RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
+  SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
+  TrustKit: dad4c3a08248c21fcb9a3b5be3c2e2b9d4f9b973
+
+PODFILE CHECKSUM: 46737184691dab3f2938d6964dd631dca1cdbc7e
+
+COCOAPODS: 1.11.3

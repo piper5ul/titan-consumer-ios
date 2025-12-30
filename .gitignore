@@ -1,0 +1,24 @@
+.DS_Store
+
+# Xcode legacy
+*.pbxuser
+
+# Xcode
+*.xcuserdata
+xcuserdata/
+Superbank.xcworkspace/
+DerivedData/
+*/.DS_Store
+
+# build products
+build/
+*.[oa]
+
+# Cocoapods
+Pods/
+Superbank/.DS_Store
+*.xcuserstate
+Superbank/Superbank/.DS_Store
+Superbank/Superbank/Source/Classes/.DS_Store
+.DS_Store
+*/.DS_Store

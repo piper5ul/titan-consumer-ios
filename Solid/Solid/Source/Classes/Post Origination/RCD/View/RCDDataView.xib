@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularPre-Book.otf">
+            <string>CircularPre-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RCDDataView" customModule="Coin" customModuleProvider="target">
+            <connections>
+                <outlet property="amountTitleLabel" destination="pNM-CG-Epp" id="dKk-DF-yJZ"/>
+                <outlet property="amountValueLabel" destination="kfc-it-AXc" id="DTu-Ku-ZcR"/>
+                <outlet property="depositeTitleLabel" destination="JrC-I4-Wup" id="BZt-ri-83J"/>
+                <outlet property="imgseparator" destination="QRe-Of-xZL" id="2CX-WR-m3L"/>
+                <outlet property="toAccNameLabel" destination="IEL-K6-PyP" id="ldg-Bq-spz"/>
+                <outlet property="toAccNumberLabel" destination="9MS-8p-GR8" id="hsE-dm-Swp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldm-q8-1ba">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fl9-7l-w1x">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPk-HP-MIB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNM-CG-Epp">
+                                            <rect key="frame" x="20" y="5" width="124" height="45"/>
+                                            <fontDescription key="fontDescription" name="CircularPre-Book" family="Circular Pre" pointSize="14"/>
+                                            <color key="textColor" name="dashboardGrayText"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-it-AXc">
+                                            <rect key="frame" x="154" y="5" width="260" height="45"/>
+                                            <fontDescription key="fontDescription" name="CircularPre-Book" family="Circular Pre" pointSize="14"/>
+                                            <color key="textColor" name="themeColorMainTwo"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="kfc-it-AXc" firstAttribute="leading" secondItem="pNM-CG-Epp" secondAttribute="trailing" constant="10" id="0rF-iW-bkF"/>
+                                        <constraint firstAttribute="height" constant="50" id="AdI-8g-u8Y"/>
+                                        <constraint firstItem="pNM-CG-Epp" firstAttribute="width" secondItem="TPk-HP-MIB" secondAttribute="width" multiplier="0.3" id="IlX-xc-ktN"/>
+                                        <constraint firstAttribute="bottom" secondItem="kfc-it-AXc" secondAttribute="bottom" id="Tvy-MJ-XVq"/>
+                                        <constraint firstItem="pNM-CG-Epp" firstAttribute="leading" secondItem="TPk-HP-MIB" secondAttribute="leading" constant="20" id="YKb-LZ-h4j"/>
+                                        <constraint firstAttribute="bottom" secondItem="pNM-CG-Epp" secondAttribute="bottom" id="fX3-wD-I5c"/>
+                                        <constraint firstAttribute="trailing" secondItem="kfc-it-AXc" secondAttribute="trailing" id="gSH-UI-rI4"/>
+                                        <constraint firstItem="kfc-it-AXc" firstAttribute="top" secondItem="pNM-CG-Epp" secondAttribute="top" id="hnd-UC-u0g"/>
+                                        <constraint firstItem="pNM-CG-Epp" firstAttribute="top" secondItem="TPk-HP-MIB" secondAttribute="top" constant="5" id="ism-XX-mUe"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCp-3Z-aRH">
+                                    <rect key="frame" x="0.0" y="50" width="414" height="70"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QRe-Of-xZL">
+                                            <rect key="frame" x="10" y="1" width="394" height="0.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="Oc1-G2-VcF"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deposit to:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrC-I4-Wup">
+                                            <rect key="frame" x="20" y="0.0" width="124" height="35"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="CircularPre-Book" family="Circular Pre" pointSize="14"/>
+                                            <color key="textColor" name="dashboardGrayText"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEL-K6-PyP">
+                                            <rect key="frame" x="154" y="0.0" width="255" height="35"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="CircularPre-Book" family="Circular Pre" pointSize="14"/>
+                                            <color key="textColor" name="themeColorMainTwo"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9MS-8p-GR8">
+                                            <rect key="frame" x="154" y="36" width="255" height="0.0"/>
+                                            <fontDescription key="fontDescription" name="CircularPre-Book" family="Circular Pre" pointSize="12"/>
+                                            <color key="textColor" name="dashboardGrayText"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="JrC-I4-Wup" firstAttribute="top" secondItem="oCp-3Z-aRH" secondAttribute="top" id="Fbi-wL-JYC"/>
+                                        <constraint firstItem="IEL-K6-PyP" firstAttribute="height" secondItem="oCp-3Z-aRH" secondAttribute="height" multiplier="0.5" id="MVu-ka-MkA"/>
+                                        <constraint firstItem="JrC-I4-Wup" firstAttribute="centerY" secondItem="IEL-K6-PyP" secondAttribute="centerY" id="P20-R9-XZa"/>
+                                        <constraint firstItem="QRe-Of-xZL" firstAttribute="leading" secondItem="oCp-3Z-aRH" secondAttribute="leading" constant="10" id="SgT-5e-QMh"/>
+                                        <constraint firstItem="9MS-8p-GR8" firstAttribute="leading" secondItem="IEL-K6-PyP" secondAttribute="leading" id="Uce-iN-l4b"/>
+                                        <constraint firstItem="IEL-K6-PyP" firstAttribute="leading" secondItem="JrC-I4-Wup" secondAttribute="trailing" constant="10" id="YVC-sg-TkK"/>
+                                        <constraint firstItem="QRe-Of-xZL" firstAttribute="top" secondItem="oCp-3Z-aRH" secondAttribute="top" constant="1" id="c6C-CZ-aHs"/>
+                                        <constraint firstItem="9MS-8p-GR8" firstAttribute="top" secondItem="IEL-K6-PyP" secondAttribute="bottom" constant="1" id="gFq-bX-8Wf"/>
+                                        <constraint firstAttribute="trailing" secondItem="IEL-K6-PyP" secondAttribute="trailing" constant="5" id="gpX-5b-Z8P"/>
+                                        <constraint firstItem="JrC-I4-Wup" firstAttribute="leading" secondItem="oCp-3Z-aRH" secondAttribute="leading" constant="20" id="iCq-v3-VTm"/>
+                                        <constraint firstItem="9MS-8p-GR8" firstAttribute="trailing" secondItem="IEL-K6-PyP" secondAttribute="trailing" id="j4L-sc-YgH"/>
+                                        <constraint firstAttribute="trailing" secondItem="QRe-Of-xZL" secondAttribute="trailing" constant="10" id="pb4-BV-Bix"/>
+                                        <constraint firstItem="IEL-K6-PyP" firstAttribute="top" secondItem="oCp-3Z-aRH" secondAttribute="top" id="vyo-w7-Q95"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="pNM-CG-Epp" firstAttribute="trailing" secondItem="JrC-I4-Wup" secondAttribute="trailing" id="em2-eH-UJh"/>
+                                <constraint firstAttribute="height" constant="120" id="raP-e3-tun"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Fl9-7l-w1x" firstAttribute="leading" secondItem="Ldm-q8-1ba" secondAttribute="leading" id="98X-mv-2cf"/>
+                        <constraint firstAttribute="trailing" secondItem="Fl9-7l-w1x" secondAttribute="trailing" id="Hok-1i-iWn"/>
+                        <constraint firstAttribute="bottom" secondItem="Fl9-7l-w1x" secondAttribute="bottom" id="Z8K-Bp-3MV"/>
+                        <constraint firstItem="Fl9-7l-w1x" firstAttribute="top" secondItem="Ldm-q8-1ba" secondAttribute="top" id="pvA-wf-hAs"/>
+                        <constraint firstAttribute="height" constant="120" id="wgO-q2-vL0"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Ldm-q8-1ba" secondAttribute="bottom" id="BdB-Y0-VHf"/>
+                <constraint firstItem="Ldm-q8-1ba" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Qqz-Le-Cvo"/>
+                <constraint firstItem="Ldm-q8-1ba" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="axu-4D-beW"/>
+                <constraint firstAttribute="trailing" secondItem="Ldm-q8-1ba" secondAttribute="trailing" id="fGt-5k-hTs"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="139" y="110"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="dashboardGrayText">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="themeColorMainTwo">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

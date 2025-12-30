@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularPre-Book.otf">
+            <string>CircularPre-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyEntryCell" id="aEQ-tp-mI0" customClass="CurrencyEntryCell" customModule="Coin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aEQ-tp-mI0" id="fYg-7A-YD2">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvb-dn-gWN">
+                        <rect key="frame" x="16" y="12" width="382" height="16.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16.5" id="mvh-dg-jAR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="CircularPre-Book" family="Circular Pre" pointSize="14"/>
+                        <color key="textColor" red="0.47508990760000003" green="0.47370994090000001" blue="0.5137313604" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pBF-3C-l7g" customClass="CurrencyTextField" customModule="Coin" customModuleProvider="target">
+                        <rect key="frame" x="16" y="36.5" width="382" height="44.5"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44.5" id="pif-OO-7R0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <outlet property="delegate" destination="aEQ-tp-mI0" id="9wQ-be-3TE"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cvb-dn-gWN" firstAttribute="trailing" secondItem="pBF-3C-l7g" secondAttribute="trailing" id="0xw-Cg-QxH"/>
+                    <constraint firstItem="pBF-3C-l7g" firstAttribute="top" secondItem="cvb-dn-gWN" secondAttribute="bottom" constant="8" id="8w3-iw-dYA"/>
+                    <constraint firstItem="cvb-dn-gWN" firstAttribute="top" secondItem="fYg-7A-YD2" secondAttribute="top" constant="12" id="H5p-a9-9q5"/>
+                    <constraint firstAttribute="bottom" secondItem="pBF-3C-l7g" secondAttribute="bottom" constant="14" id="Ooa-5f-Qcq"/>
+                    <constraint firstItem="cvb-dn-gWN" firstAttribute="leading" secondItem="pBF-3C-l7g" secondAttribute="leading" id="dsz-ac-H6f"/>
+                    <constraint firstAttribute="trailing" secondItem="pBF-3C-l7g" secondAttribute="trailing" constant="16" id="k5Y-dN-i5m"/>
+                    <constraint firstItem="pBF-3C-l7g" firstAttribute="leading" secondItem="fYg-7A-YD2" secondAttribute="leading" constant="16" id="sQF-DE-lio"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lblTitle" destination="cvb-dn-gWN" id="Rfg-I8-i7E"/>
+                <outlet property="txtFieldAmount" destination="pBF-3C-l7g" id="Bme-xT-Xnq"/>
+            </connections>
+            <point key="canvasLocation" x="182.60869565217394" y="85.044642857142847"/>
+        </tableViewCell>
+    </objects>
+</document>

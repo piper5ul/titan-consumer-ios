@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularPre-Book.otf">
+            <string>CircularPre-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FilterAmountCell" id="nUI-m9-VCx" customClass="FilterAmountCell" customModule="Coin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nUI-m9-VCx" id="NTX-P8-cLB">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gE0-Uk-xL9">
+                        <rect key="frame" x="10" y="10" width="394" height="71.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVT-5f-xNs">
+                                <rect key="frame" x="0.0" y="0.0" width="394" height="71.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfd-Im-7T7">
+                                        <rect key="frame" x="10" y="0.0" width="32.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="CircularPre-Book" family="Circular Pre" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzw-MS-21l">
+                                        <rect key="frame" x="219" y="0.0" width="15" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="CircularPre-Book" family="Circular Pre" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uOt-UQ-qJr" customClass="CurrencyTextField" customModule="Coin" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="27.5" width="155.5" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="zsl-4f-bpw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vh0-27-UDQ" customClass="CurrencyTextField" customModule="Coin" customModuleProvider="target">
+                                        <rect key="frame" x="219" y="27.5" width="155" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="uOt-UQ-qJr" firstAttribute="top" secondItem="Zfd-Im-7T7" secondAttribute="bottom" constant="11" id="3eF-xl-NXE"/>
+                                    <constraint firstItem="Vh0-27-UDQ" firstAttribute="top" secondItem="uOt-UQ-qJr" secondAttribute="top" id="65E-WY-VgE"/>
+                                    <constraint firstItem="Zfd-Im-7T7" firstAttribute="leading" secondItem="oVT-5f-xNs" secondAttribute="leading" constant="10" id="9tJ-T7-1hZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vh0-27-UDQ" secondAttribute="trailing" constant="20" id="Bak-vK-PE1"/>
+                                    <constraint firstItem="uOt-UQ-qJr" firstAttribute="leading" secondItem="oVT-5f-xNs" secondAttribute="leading" constant="10" id="FSr-kH-vNk"/>
+                                    <constraint firstItem="Mzw-MS-21l" firstAttribute="leading" secondItem="Vh0-27-UDQ" secondAttribute="leading" id="Fco-oQ-wQV"/>
+                                    <constraint firstItem="Mzw-MS-21l" firstAttribute="top" secondItem="Zfd-Im-7T7" secondAttribute="top" id="IFA-FD-WrK"/>
+                                    <constraint firstItem="Vh0-27-UDQ" firstAttribute="bottom" secondItem="uOt-UQ-qJr" secondAttribute="bottom" id="KT7-Of-EVm"/>
+                                    <constraint firstItem="Zfd-Im-7T7" firstAttribute="top" secondItem="oVT-5f-xNs" secondAttribute="top" id="ZTH-MO-wo8"/>
+                                    <constraint firstItem="Vh0-27-UDQ" firstAttribute="leading" secondItem="uOt-UQ-qJr" secondAttribute="trailing" constant="53.5" id="nTx-eA-tuB"/>
+                                    <constraint firstItem="Vh0-27-UDQ" firstAttribute="width" secondItem="uOt-UQ-qJr" secondAttribute="width" id="ukp-Sv-qwe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="oVT-5f-xNs" secondAttribute="bottom" id="MAV-gU-MPT"/>
+                            <constraint firstAttribute="height" constant="71.5" id="PlU-oT-CdD"/>
+                            <constraint firstAttribute="trailing" secondItem="oVT-5f-xNs" secondAttribute="trailing" id="lCH-a5-cVI"/>
+                            <constraint firstItem="oVT-5f-xNs" firstAttribute="leading" secondItem="gE0-Uk-xL9" secondAttribute="leading" id="mIH-fL-3hf"/>
+                            <constraint firstItem="oVT-5f-xNs" firstAttribute="top" secondItem="gE0-Uk-xL9" secondAttribute="top" id="st2-kD-MLi"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gE0-Uk-xL9" firstAttribute="top" secondItem="NTX-P8-cLB" secondAttribute="top" constant="10" id="9kc-cD-bXM"/>
+                    <constraint firstAttribute="trailing" secondItem="gE0-Uk-xL9" secondAttribute="trailing" constant="10" id="B0D-dh-gBn"/>
+                    <constraint firstItem="gE0-Uk-xL9" firstAttribute="leading" secondItem="NTX-P8-cLB" secondAttribute="leading" constant="10" id="RdG-yY-bjb"/>
+                    <constraint firstAttribute="bottom" secondItem="gE0-Uk-xL9" secondAttribute="bottom" constant="10" id="li5-kG-TuC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lblFrom" destination="Zfd-Im-7T7" id="JDa-Ll-WDw"/>
+                <outlet property="lblTo" destination="Mzw-MS-21l" id="ujz-Mg-rVb"/>
+                <outlet property="txtFrom" destination="uOt-UQ-qJr" id="lTy-OL-tCD"/>
+                <outlet property="txtTo" destination="Vh0-27-UDQ" id="2LX-gi-bLE"/>
+            </connections>
+            <point key="canvasLocation" x="111.59420289855073" y="36.160714285714285"/>
+        </tableViewCell>
+    </objects>
+</document>

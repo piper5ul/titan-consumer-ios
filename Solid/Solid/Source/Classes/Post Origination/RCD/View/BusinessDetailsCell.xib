@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularPre-Bold.otf">
+            <string>CircularPre-Bold</string>
+        </array>
+        <array key="CircularPre-Book.otf">
+            <string>CircularPre-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusinessDetailsCell" id="KGk-i7-Jjw" customClass="BusinessDetailsCell" customModule="Roadsync" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="158"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="158"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uht-MG-bkV">
+                        <rect key="frame" x="0.0" y="8" width="320" height="142"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please note:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkc-qg-rel">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="4aT-L4-HUv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CircularPre-Bold" family="Circular Pre" pointSize="16"/>
+                                <color key="textColor" name="themeColorSubTwo"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTQ-gD-4i8">
+                                <rect key="frame" x="0.0" y="35" width="320" height="107"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_card_reader_24px" translatesAutoresizingMaskIntoConstraints="NO" id="usb-jq-wFG">
+                                        <rect key="frame" x="12" y="16" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="2zR-S5-edq"/>
+                                            <constraint firstAttribute="width" constant="24" id="9Tv-Yh-Mq1"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The check amount will be credited to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUp-ax-clK">
+                                        <rect key="frame" x="52" y="16" width="260" height="24"/>
+                                        <fontDescription key="fontDescription" name="CircularPre-Book" family="Circular Pre" pointSize="14"/>
+                                        <color key="textColor" name="themeColorSubTwo"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZW-99-7Tk">
+                                        <rect key="frame" x="52" y="56" width="260" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="JCW-Wp-Bda"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CircularPre-Book" family="Circular Pre" pointSize="14"/>
+                                        <color key="textColor" name="themeColorSubTwo"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqX-Iu-xkZ">
+                                        <rect key="frame" x="52" y="77" width="260" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="Jey-42-kFT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CircularPre-Book" family="Circular Pre" pointSize="12"/>
+                                        <color key="textColor" name="dashboardGrayText"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="bqX-Iu-xkZ" firstAttribute="top" secondItem="EZW-99-7Tk" secondAttribute="bottom" id="Dj1-61-oEJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="WUp-ax-clK" secondAttribute="trailing" constant="8" id="HI1-Tr-dBm"/>
+                                    <constraint firstItem="EZW-99-7Tk" firstAttribute="trailing" secondItem="WUp-ax-clK" secondAttribute="trailing" id="Uht-cO-9eL"/>
+                                    <constraint firstItem="usb-jq-wFG" firstAttribute="top" secondItem="DTQ-gD-4i8" secondAttribute="top" constant="16" id="daY-Bt-2zQ"/>
+                                    <constraint firstItem="WUp-ax-clK" firstAttribute="bottom" secondItem="usb-jq-wFG" secondAttribute="bottom" id="fDa-CW-FeA"/>
+                                    <constraint firstItem="WUp-ax-clK" firstAttribute="leading" secondItem="usb-jq-wFG" secondAttribute="trailing" constant="16" id="grI-uP-yEu"/>
+                                    <constraint firstItem="EZW-99-7Tk" firstAttribute="leading" secondItem="WUp-ax-clK" secondAttribute="leading" id="iM1-ty-Sqc"/>
+                                    <constraint firstItem="bqX-Iu-xkZ" firstAttribute="trailing" secondItem="EZW-99-7Tk" secondAttribute="trailing" id="iOb-W4-xjU"/>
+                                    <constraint firstItem="usb-jq-wFG" firstAttribute="leading" secondItem="DTQ-gD-4i8" secondAttribute="leading" constant="12" id="iOk-Sw-uPd"/>
+                                    <constraint firstItem="bqX-Iu-xkZ" firstAttribute="leading" secondItem="EZW-99-7Tk" secondAttribute="leading" id="mnG-ZS-msO"/>
+                                    <constraint firstItem="WUp-ax-clK" firstAttribute="top" secondItem="usb-jq-wFG" secondAttribute="top" id="v79-V2-09J"/>
+                                    <constraint firstItem="EZW-99-7Tk" firstAttribute="top" secondItem="WUp-ax-clK" secondAttribute="bottom" constant="16" id="yTd-vy-Rqm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.89411764705882346" green="0.90588235294117647" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DTQ-gD-4i8" secondAttribute="trailing" id="8Wx-lX-qV5"/>
+                            <constraint firstItem="Wkc-qg-rel" firstAttribute="leading" secondItem="uht-MG-bkV" secondAttribute="leading" id="B17-et-OE6"/>
+                            <constraint firstAttribute="bottom" secondItem="DTQ-gD-4i8" secondAttribute="bottom" id="EGM-yx-7OL"/>
+                            <constraint firstItem="Wkc-qg-rel" firstAttribute="top" secondItem="uht-MG-bkV" secondAttribute="top" id="W85-eY-G0E"/>
+                            <constraint firstItem="DTQ-gD-4i8" firstAttribute="leading" secondItem="uht-MG-bkV" secondAttribute="leading" id="d1M-Dw-pnv"/>
+                            <constraint firstAttribute="trailing" secondItem="Wkc-qg-rel" secondAttribute="trailing" id="f7v-a8-Sq2"/>
+                            <constraint firstItem="DTQ-gD-4i8" firstAttribute="top" secondItem="Wkc-qg-rel" secondAttribute="bottom" constant="16" id="szV-Vs-PPv"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uht-MG-bkV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="6Ya-sw-ib3"/>
+                    <constraint firstAttribute="trailing" secondItem="uht-MG-bkV" secondAttribute="trailing" id="bBf-KZ-zUa"/>
+                    <constraint firstItem="uht-MG-bkV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="caI-rU-X9r"/>
+                    <constraint firstAttribute="bottom" secondItem="uht-MG-bkV" secondAttribute="bottom" constant="8" id="en7-Le-mgT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="toAccNameLabel" destination="EZW-99-7Tk" id="6Nt-rD-gKc"/>
+                <outlet property="toAccNumberLabel" destination="bqX-Iu-xkZ" id="8Md-1r-euH"/>
+            </connections>
+            <point key="canvasLocation" x="-177" y="129"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_card_reader_24px" width="24" height="24"/>
+        <namedColor name="dashboardGrayText">
+            <color red="0.56499999761581421" green="0.56499999761581421" blue="0.62000000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="themeColorSubTwo">
+            <color red="0.043000001460313797" green="0.043000001460313797" blue="0.046999998390674591" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

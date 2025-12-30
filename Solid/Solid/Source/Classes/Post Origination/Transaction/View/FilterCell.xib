@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="CircularPre-Book.otf">
+            <string>CircularPre-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilterCell" id="zgg-eW-Ycq" customClass="FilterCell" customModule="Superbank" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="96" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9LC-S8-ixY">
+                <rect key="frame" x="0.0" y="0.0" width="96" height="40"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYn-BU-CCU" userLabel="period filter">
+                        <rect key="frame" x="2" y="2" width="92" height="36"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="period" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRr-lh-xRE">
+                                <rect key="frame" x="5" y="7" width="65" height="21"/>
+                                <fontDescription key="fontDescription" name="CircularPre-Book" family="Circular Pre" pointSize="14"/>
+                                <color key="textColor" red="0.10980392160000001" green="0.1764705882" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="darkColor" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddy-lg-JSf">
+                                <rect key="frame" x="72" y="10.5" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="YPm-AL-L8D"/>
+                                    <constraint firstAttribute="height" constant="15" id="cjA-gZ-n0m"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nRr-lh-xRE" firstAttribute="leading" secondItem="bYn-BU-CCU" secondAttribute="leading" constant="5" id="01T-bV-NBK"/>
+                            <constraint firstItem="nRr-lh-xRE" firstAttribute="top" secondItem="bYn-BU-CCU" secondAttribute="top" constant="7" id="7RD-fB-A82"/>
+                            <constraint firstItem="Ddy-lg-JSf" firstAttribute="centerY" secondItem="bYn-BU-CCU" secondAttribute="centerY" id="VKI-t8-fZf"/>
+                            <constraint firstAttribute="trailing" secondItem="Ddy-lg-JSf" secondAttribute="trailing" constant="5" id="Wd0-l2-15U"/>
+                            <constraint firstItem="Ddy-lg-JSf" firstAttribute="leading" secondItem="nRr-lh-xRE" secondAttribute="trailing" constant="2" id="fxJ-ZG-Zdd"/>
+                            <constraint firstAttribute="bottom" secondItem="nRr-lh-xRE" secondAttribute="bottom" constant="8" id="mCQ-tV-04N"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="0.0" height="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="bYn-BU-CCU" secondAttribute="bottom" constant="2" id="OeW-la-mp4"/>
+                    <constraint firstAttribute="trailing" secondItem="bYn-BU-CCU" secondAttribute="trailing" constant="2" id="bwG-EA-rZd"/>
+                    <constraint firstItem="bYn-BU-CCU" firstAttribute="top" secondItem="9LC-S8-ixY" secondAttribute="top" constant="2" id="c9a-e8-xkk"/>
+                    <constraint firstItem="bYn-BU-CCU" firstAttribute="leading" secondItem="9LC-S8-ixY" secondAttribute="leading" constant="2" id="gGI-wf-IFF"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="71" height="31"/>
+            <connections>
+                <outlet property="removeButton" destination="Ddy-lg-JSf" id="G9F-0N-35l"/>
+                <outlet property="titleLabel" destination="nRr-lh-xRE" id="Fq1-0h-0MS"/>
+            </connections>
+            <point key="canvasLocation" x="1.4492753623188408" y="41.517857142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="close" width="24" height="24"/>
+    </resources>
+</document>

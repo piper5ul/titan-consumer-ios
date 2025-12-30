@@ -1,0 +1,113 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "8dd85aee02e39dd280c75eef88ffdb86eed4b07b",
+        "version" : "5.6.2"
+      }
+    },
+    {
+      "identity" : "cardiosdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/verygoodsecurity/CardIOSDK-iOS.git",
+      "state" : {
+        "revision" : "9f21bec2d2f12d14ffbe8305c44ceff9b60e35af",
+        "version" : "5.5.7"
+      }
+    },
+    {
+      "identity" : "cardscan-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/getbouncer/cardscan-ios.git",
+      "state" : {
+        "revision" : "84e7d1e7805675274edd85bc786b2dd1e4d864e0",
+        "version" : "2.0.9"
+      }
+    },
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios.git",
+      "state" : {
+        "revision" : "314537ec697719fa33a9d48210f4d06a463286d3",
+        "version" : "3.4.3"
+      }
+    },
+    {
+      "identity" : "reachability.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ashleymills/Reachability.swift",
+      "state" : {
+        "revision" : "c01bbdf2d633cf049ae1ed1a68a2020a8bda32e2",
+        "version" : "5.1.0"
+      }
+    },
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage.git",
+      "state" : {
+        "revision" : "484bc774e1091f622c4856e576ff957b29403676",
+        "version" : "5.13.3"
+      }
+    },
+    {
+      "identity" : "sdwebimagesvgcoder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImageSVGCoder.git",
+      "state" : {
+        "revision" : "afbe025cbdae37c20c144956fbabc07ddd5c0fc2",
+        "version" : "1.6.1"
+      }
+    },
+    {
+      "identity" : "skeletonview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Juanpe/SkeletonView.git",
+      "state" : {
+        "revision" : "ca7d2edceee613e47b7857029fc82de633460e6f",
+        "version" : "1.30.2"
+      }
+    },
+    {
+      "identity" : "swiftkeychainwrapper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jrendel/SwiftKeychainWrapper",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "185a3165346a03767101c4f62e9a545a0fe0530f"
+      }
+    },
+    {
+      "identity" : "toast-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/scalessec/Toast-Swift.git",
+      "state" : {
+        "revision" : "0c9493eeacb102cc614da385cfaaf475379f4ab4",
+        "version" : "5.0.1"
+      }
+    },
+    {
+      "identity" : "vgs-collect-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/verygoodsecurity/vgs-collect-ios.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "33a6c0de3c62778ba4f92629fb737e8b3013b60f"
+      }
+    },
+    {
+      "identity" : "vgs-show-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/verygoodsecurity/vgs-show-ios",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0b8053a22a8109f505aea8db73f158a8f250a2e5"
+      }
+    }
+  ],
+  "version" : 2
+}

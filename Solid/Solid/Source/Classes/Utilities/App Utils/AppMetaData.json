@@ -1,0 +1,59 @@
+{
+    "name": "Titan Wallet",
+    "primaryColor": "#667eea",
+    "darkPrimaryColor": "#FFFFFF",
+    "primaryTextColor": "#000000",
+    "darkPrimaryTextColor": "#FFFFFF",
+    "secondaryColor": "#764ba2",
+    "darkSecondaryColor": "#EBEBF5",
+    "ctaColor": "#667eea",
+    "darkCtaColor": "#764ba2",
+    "ctaTextColor": "#FFFFFF",
+    "darkCtaTextColor": "#000000",
+    "ui": {
+        "isTestModeEnabled" : true,
+        "isSendCardByMailVisible": false,
+        "isPullFundsEnabled": true,
+        "isIntrabankTransferEnabled": true,
+        "isToAnotherBankEnabled": true,
+        "isDepositCheckEnabled": false,
+        "isSendMoneyIntraBankEnabled": true,
+        "isSendMoneyACHEnabled": true,
+        "isSendMoneyCheckEnabled": false,
+        "isSendMoneyDomesticwireEnabled": true,
+        "isSendMoneyVisaCardEnabled": false,
+        "isContactMakePaymentEnabled": true,
+        "isAddToWalletEnabled": true
+    },
+    "env": {
+        "prod": {
+            "auth0ClientId": "YOUR_AUTH0_CLIENT_ID_PROD",
+            "auth0Audience": "https://api.titanwallet.com",
+            "auth0Domain": "titan-wallet.us.auth0.com",
+            "segmentKey": ""
+        },
+        "prodtest": {
+            "auth0ClientId": "YOUR_AUTH0_CLIENT_ID_TEST",
+            "auth0Audience": "https://api-test.titanwallet.com",
+            "auth0Domain": "titan-wallet-test.us.auth0.com",
+            "segmentKey": ""
+        }
+    },
+    "supportedCountries": [
+        {
+            "name": "United States",
+            "dial_code": "+1",
+            "code": "US",
+            "maxLength": 10
+        }
+    ],
+    "supportMail": "support@titanwallet.com",
+    "lcbTerms": "https://titanwallet.com/terms",
+    "platformTerms": "https://titanwallet.com/platform-terms",
+    "walletTerms": "https://titanwallet.com/wallet-terms",
+    "helpCenter": "https://help.titanwallet.com",
+    "disclosures": "https://titanwallet.com/disclosures",
+    "auth0Terms": "https://titanwallet.com/terms-of-service",
+    "auth0Privacy": "https://titanwallet.com/privacy-policy",
+    "appUrl": "https://apps.apple.com/us/app/titan-wallet/id0000000000"
+}

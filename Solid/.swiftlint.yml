@@ -1,0 +1,65 @@
+disabled_rules:
+  - switch_case_alignment
+  - class_delegate_protocol
+  - force_cast
+  - unused_optional_binding
+  - redundant_string_enum_value
+  - unused_enumerated
+  - trailing_whitespace
+  - cyclomatic_complexity
+  - notification_center_detachment
+  - function_parameter_count
+  - force_try
+  - comment_spacing
+  - mark
+
+included: # paths to include during linting. `--path` is ignored if present.
+  - Solid
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+
+
+opening_brace: 
+  severity: error
+
+statement_position:
+  severity: error
+
+colon:
+  severity: error
+
+type_body_length:
+  - 300 # warning
+  - 400 # error
+
+file_length:
+  warning: 800
+  error: 1000
+  
+function_body_length:
+- 100 #warning
+- 120 #error
+
+large_tuple: # warn user when using 3 values in tuple, give error if there are 4
+   - 3
+   - 4
+
+line_length: 300
+
+type_name:
+  min_length: 2 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded: iPhone # excluded via string
+  allowed_symbols: "_"
+  
+identifier_name:
+  min_length: 2
+  excluded: # excluded via string array
+    - id
+    - URL
+    - GlobalAPIKey
+
+reporter: "xcode"

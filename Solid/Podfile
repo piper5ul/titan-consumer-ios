@@ -1,0 +1,37 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '13.0'
+
+# ignore all warnings from all dependencies
+inhibit_all_warnings!
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    #    puts "#{target.name}"
+    target.build_configurations.each do |config|
+      config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf'
+    end
+  end
+end
+
+use_frameworks!
+
+def common_pods
+  pod 'GooglePlaces'
+  pod 'Plaid'
+  pod 'MercariQRScanner'
+  pod 'Analytics'
+  pod 'RNCryptor'
+end
+
+project = Xcodeproj::Project.open "./Solid.xcodeproj"
+
+project.targets.each do |t|
+  target t.name do
+    common_pods
+  end
+end
+
+
+#target 'Superbank' do
+#  # Pods for Superbank
+#
+#end
