@@ -91,14 +91,93 @@ enum EndpointItem {
     case debitPull
 }
 
+// MARK: - Titan Microservices
+enum TitanService {
+    case handleResolution   // Port 8001
+    case paymentRouter      // Port 8002
+    case achService         // Port 8003
+    case authService        // Port 8004
+    case userManagement     // Port 8006
+    case blnkLedger         // Port 5001 (backend only, not used directly)
+
+    func baseURL(for environment: APIManager.NetworkEnviroment) -> String {
+        switch environment {
+        case .productionTest:
+            switch self {
+            case .handleResolution: return "http://localhost:8001"
+            case .paymentRouter: return "http://localhost:8002"
+            case .achService: return "http://localhost:8003"
+            case .authService: return "http://localhost:8004"
+            case .userManagement: return "http://localhost:8006"
+            case .blnkLedger: return "http://localhost:5001"
+            }
+        case .productionLive:
+            switch self {
+            case .handleResolution: return "https://hrs.titanwallet.com"
+            case .paymentRouter: return "https://payments.titanwallet.com"
+            case .achService: return "https://ach.titanwallet.com"
+            case .authService: return "https://auth.titanwallet.com"
+            case .userManagement: return "https://users.titanwallet.com"
+            case .blnkLedger: return "https://ledger.titanwallet.com"
+            }
+        }
+    }
+}
+
 // MARK: - EndPointType
 extension EndpointItem: EndPointType {
-    
-    var baseURL: String {
-        switch APIManager.networkEnviroment {
-        case .productionTest: return "https://test-api.solidfi.com/v1"
-        case .productionLive: return "https://api.solidfi.com/v1"
+
+    // Determine which Titan microservice this endpoint belongs to
+    var titanService: TitanService {
+        switch self {
+        // Auth Service (8004)
+        case .registerUser, .logout:
+            return .authService
+
+        // User Management Service (8006)
+        case .getPerson, .updatePerson(_), .getPersonaHostedUrl(_), .submitKYC(_),
+             .submitKyb(_), .getKybStatus(_), .listAllNAICSCodes, .getProjection(_),
+             .updateProjection(_), .listAllBusiness, .createBusiness, .getBusiness(_),
+             .getOwnershipDisclosure(_), .generateOwnershipDisclosure(_), .updateBusiness(_),
+             .listAllOwner(_), .createOwner, .getOwnerDetails(_), .updateOwner(_),
+             .submitOwnerKyc(_), .getOwnerKyc(_), .createContact, .updateContact(_),
+             .listAllContacts(_, _, _, _), .getContactDetails(_), .deleteContact(_),
+             .getProgramDetail(_):
+            return .userManagement
+
+        // ACH Service (8003)
+        case .getPlaidTempToken(_), .submitPlaidPublicToken(_), .pullFundsIn, .pullFundsOut, .debitPull:
+            return .achService
+
+        // Payment Router (8002)
+        case .paymentMethod(_):
+            return .paymentRouter
+
+        // For accounts/transactions/cards - will use User Management for now
+        // In production, accounts map to Blnk balances (port 5001)
+        case .createAccount, .listAllAccount(_, _, _), .getAccount(_),
+             .listStatementForAccount(_), .getStatementForAccount(_, _),
+             .listAllTransaction(_, _), .getTransactionDetail(_, _), .transactionDetailExport(_, _):
+            return .userManagement
+
+        // Cards - will be a separate service in future, use User Management for now
+        case .createCard, .updateCard(_), .getCards(_, _, _), .getCardDetails(_),
+             .getCardUnredacted(_), .activateCard(_), .deleteCard(_), .getVGSShowToken(_),
+             .getCardPinToken(_), .getAddDebitCardToken(_), .getATMLocation(_, _, _, _, _, _),
+             .enrollWallet(_):
+            return .userManagement
+
+        // Checks - future service, use User Management for now
+        case .receiveCheck, .receiveCheckFiles(_), .receiveCheckStatus, .listAllChecks(_), .updateReceiveCheck:
+            return .userManagement
+
+        default:
+            return .userManagement
         }
+    }
+
+    var baseURL: String {
+        return titanService.baseURL(for: APIManager.networkEnviroment)
     }
     
     var path: String {
