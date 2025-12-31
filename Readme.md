@@ -11,117 +11,258 @@
 
 Titan Wallet Consumer iOS app is a feature-complete mobile wallet for real-time payments, built on top of Titan's backend microservices platform.
 
-**Forked from:** Solid.fi Banking Platform (42,000 LOC production-proven code)
-**Adapted for:** Titan Wallet ecosystem with @handle payments and real-time settlements
+**Base Code:** Production-proven banking app (42,000 LOC)
+**Key Features:** @handle payments, real-time settlements, ACH transfers, KYC/KYB verification
 
-## Tooling
-- iOS 14.0 +
-- Xcode 14 +
-- Swift 5.0 +
-- CocoaPods
-- Packages
+---
 
-## API Reference
-- All API endpoints are added in EndpointType.swift and EndpointItem.swift files
-- API code is added in individual view model class eg., KYBViewModel.swift
-- App level common API calls are made from APIBaseVC.swift
+## 🚀 Quick Start
 
-## Features 
-- Authentication (Auth0)
-- Person (KYC)
-- Business (KYB)
-- Bank Accounts
-- Pull Funds
-- Contacts
-- Send
-- Receive
-- Cards
-- Transactions
-- In-app provisioning (Apple wallet)
+### 1. Install Dependencies
 
-## Dependencies
-- Analytics
-- Alamofire
-- Firebase/Crashlytics
-- Firebase/Analytics
-- GooglePlace
-- lottie-ios
-- Plaid
-- RNCryptor
-- SwiftKeychainWrapper
-- SDWebImageSVGCoder
-- SDWebImage
-- SkeletonView
-- VGSShowSDK
-- VGSCollectSDK
-- MercariQRScanner
+```bash
+cd titan-consumer-ios/TitanConsumer
+pod install
+```
 
+### 2. Open Workspace
 
-Doc reference :
-- API Doc for reference : https://www.solidfi.com/dev
-- Figma Design file for reference : https://www.figma.com/file/CUEcwPWWrZfHuAGPoWBNRg/Generic-Apps?node-id=2815%3A140
+```bash
+open TitanConsumer.xcworkspace
+```
 
-## Getting started
+### 3. Run on Simulator
 
-### 1. Required Keys:
+Press `Cmd+R` or click the ▶️ button in Xcode.
 
-In order to start building and running the Solid wallet project, you'll need certain configuration keys set up.
+The app will connect to Titan backend services on `localhost:8001-8006` in test mode.
 
-#### 1.1 Auth0 Client ID (Required)
+---
 
-For login we use Auth0's passwordless service. For each application to work we need to setup configuration in Auth0 as well as in client app. Auth0 client ID is a key used to connect client apps to Solid's backend APIs and Auth0. The wallet apps use a token based authentication scheme as described in [Solid User Auth](https://www.solidfi.com/dev#authentication). The Solid User Auth process results in an access token that allows our apps to directly connect with Solid's API(s). This is separate from the API key model which allows customers to make secure machine-to-machine calls without an access token. The Auth Client ID can be generated in the [Soild Dashboard](https://dashboard.solidfi.com) under the developer section. Then set it under `env -> auth0ClientId` in the file `AppMetaData.json` file at path `/Solid/Solid/Source/Classes/Utilities/App Utils`. For the test environment set the Auth Client ID (auth0ClientId) variable in prodtest and for live set under prod. Contact Solid's support team in case you need help in setting up Auth0 Client Id.
+## ⚙️ Configuration
 
-#### 1.2 Auth0 Audience and Auth0 Domain (Required)
+All configuration is in `TitanConsumer/Solid/Source/Classes/Utilities/App Utils/AppMetaData.json`
 
-Auth0 Audience and Domain are the keys used by Auth0 to identify the correct application to manage users accordingly. These values are added under `env -> auth0Audience` and `env -> auth0Domain` in the file `AppMetaData.json` file at path `/Solid/Solid/Source/Classes/Utilities/App Utils`.
+### Auth0 Credentials (Already Configured)
 
-#### 1.3 VGS Vault ID (Optional)
+```json
+{
+  "env": {
+    "prod": {
+      "auth0ClientId": "5pjTAHK7cjXIdFxmrPnL50LKcNbu2uys",
+      "auth0Domain": "dev-gpkn7n5wg1qsbl4g.us.auth0.com",
+      "auth0Audience": "https://api.titanwallet.com"
+    },
+    "prodtest": {
+      "auth0ClientId": "5pjTAHK7cjXIdFxmrPnL50LKcNbu2uys",
+      "auth0Domain": "dev-gpkn7n5wg1qsbl4g.us.auth0.com",
+      "auth0Audience": "https://api-test.titanwallet.com"
+    }
+  }
+}
+```
 
-Solid uses Very Good Security (VGS) for PCI compliance and to help keep our customers out of scope. VGS tokenizes PCI specific card data so that neither Solid nor the customer have to store card numbers or cvvs. The VGS vault ID can be requested via a Solid Dashboard Help Desk ticket. Once obtained the Vault ID should be set under `VGS` in the `Config.swift` file at path `/Solid/Source/Classes/Utilities/Constants/Config.swift`.
+### Optional: Google Places API Key
 
-Note: If the Vault ID(s) are omitted cards will not be shown unredacted.
+For address autocomplete during KYC, add your key to `Config.swift`:
 
-#### 1.4 Google Places Key (Optional)
+```swift
+// Path: TitanConsumer/Solid/Source/Classes/Utilities/Constants/Config.swift
+struct Config {
+    static let GooglePlaces = "YOUR_GOOGLE_PLACES_API_KEY"
+}
+```
 
-Solid uses Google Places to show location details in the wallet apps. For more details on obtaining a Google Maps Key please refer to this [doc](https://developers.google.com/maps/documentation/javascript/get-api-key). The Google Maps Key should be set under `GooglePlaces` in the `Config.swift` file at path `/Solid/Source/Classes/Utilities/Constants/Config.swift`.
+---
 
-Note: If the Google Places Key is omitted then location details will not be shown. You will need to enter address manually in the UI.
-For ex.   ` "address": {
-       "addressType": "mailing",
-       "line1": "123 Main St",
-       "line2": "",
-       "city": "New York",
-       "state": "NY",
-       "country": "US",
-       "postalCode": "10001"
-   }`
+## 🏗️ Architecture
 
-#### 1.5 Segment(Optional)
+### Microservices Integration
 
-The Solid wallet apps use [Segment](https://segment.com/) for analytics. If you want to enable analytics support then update the Segment Key under env -> segmentKey` in the file `AppMetaData.json` file at path `/Solid/Solid/Source/Classes/Utilities/App Utils`.
+The app routes API calls to different Titan services based on endpoint type:
 
-### 2. In-app provisioning (Apple wallet):
-Please contact Apple Pay Entitlements <applepayentitlements@apple.com> from the Apple developer account owner email ID for enabling push provisioning entitlements.
+| Service | Port (Dev) | Production URL | Purpose |
+|---------|-----------|----------------|---------|
+| Handle Resolution | 8001 | hrs.titanwallet.com | @handle lookup |
+| Payment Router | 8002 | payments.titanwallet.com | Payment processing |
+| ACH Service | 8003 | ach.titanwallet.com | Plaid/ACH integration |
+| Auth Service | 8004 | auth.titanwallet.com | User authentication |
+| User Management | 8006 | users.titanwallet.com | KYC/KYB, users, contacts |
 
-Note: you can disable/remove In-app provisioning by following steps:
-- Remove `Solid.entitlements` from project
-- Remove `Wallet` from `Capabilites` section in xcode
-- Comment `checkEligibility()` from `viewWillAppear()` in `CardInfoVC.swift` OR remove code related to `Passkit`
+**See:** `EndpointItem.swift` for routing logic (line 94+)
 
-## Install and run CocoaPods
+---
 
-Installing CocoaPods at https://cocoapods.org/
+## 📱 Features
 
-In the `Solid/` directory run `pod install`
+### Consumer Features
+- ✅ **@handle Payments** - Send money via @alice instead of account numbers
+- ✅ **Real-time Transfers** - Instant settlement via RTP
+- ✅ **Bank Account Linking** - Plaid integration for ACH
+- ✅ **Pull Funds** - Transfer from external bank accounts
+- ✅ **Send Money** - ACH, Wire, Intrabank transfers
+- ✅ **Contacts** - Save recipients for quick payments
+- ✅ **Transaction History** - View all payment activity
+- ✅ **KYC Verification** - Identity verification flow
+- ✅ **Business Accounts** - KYB for business users
+- ✅ **Cards** - Virtual/physical debit cards (future)
+- ✅ **Apple Wallet** - Add card to Apple Pay (future)
 
-## Open workspace and run in Simulator
+### Disabled for Consumer App
+- ❌ Check deposits
+- ❌ Visa card sends
+- ❌ Physical card mailing
 
-1. Launch `Xcode` and open the workspace `Solid/Solid.xcworkspace`
-1. Run in Simulator
+---
 
-## Testing
-For the ease of development, Solid Banking Platform offers you two modes:
+## 🧪 Testing
 
-- Test: Test credentials and real-life like data. Requests made to the Test environment will never hit banking or payments or identity verification networks. These will never affect live data.
+### Test Modes
 
-- Live: Real credentials and real data. Requests made to the Live environment will hit Live environments of banking or payments or identity verification networks. These will hit live data.
+Switch between environments in AppMetaData.json:
+
+**Test Mode** (Default):
+- Uses `localhost:8001-8006` for Titan services
+- Safe for development - no real money
+
+**Live Mode**:
+- Uses production Titan URLs
+- Real transactions with real money
+
+### Running Tests
+
+```bash
+cd titan-consumer-ios/TitanConsumer
+# Run unit tests
+xcodebuild test -workspace TitanConsumer.xcworkspace -scheme Solid -destination 'platform=iOS Simulator,name=iPhone 14'
+```
+
+---
+
+## 📂 Project Structure
+
+```
+titan-consumer-ios/
+├── TitanConsumer/                    # Main workspace folder
+│   ├── TitanConsumer.xcworkspace    # Open this in Xcode
+│   ├── Solid.xcodeproj              # Xcode project (internal)
+│   ├── Podfile                      # CocoaPods dependencies
+│   └── Solid/                       # Source code
+│       ├── Source/
+│       │   ├── Classes/
+│       │   │   ├── Networking/
+│       │   │   │   ├── EndpointItem.swift    # Titan API routing
+│       │   │   │   └── EndpointType.swift
+│       │   │   ├── Utilities/
+│       │   │   │   └── App Utils/
+│       │   │   │       └── AppMetaData.json  # App configuration
+│       │   │   ├── ViewControllers/
+│       │   │   └── ViewModels/
+│       │   └── Resources/
+│       └── Storyboards/
+└── README.md
+```
+
+---
+
+## 🔧 Development
+
+### Building
+
+```bash
+cd titan-consumer-ios/TitanConsumer
+pod install
+open TitanConsumer.xcworkspace
+
+# Build: Cmd+B
+# Run: Cmd+R
+# Test: Cmd+U
+```
+
+### Running Titan Backend (Required for Testing)
+
+```bash
+cd /Users/pushkar/Downloads/rtpayments/titan-backend-services
+docker-compose up -d
+
+# Services will be available on:
+# - HRS: localhost:8001
+# - Payment Router: localhost:8002
+# - ACH Service: localhost:8003
+# - Auth Service: localhost:8004
+# - User Management: localhost:8006
+```
+
+### Debugging
+
+- Set breakpoints in ViewControllers or ViewModels
+- Check network calls in `APIManager.swift`
+- View logs in Xcode console
+
+---
+
+## 📚 Key Files
+
+| File | Purpose |
+|------|---------|
+| `AppMetaData.json` | Auth0 config, feature flags, branding |
+| `EndpointItem.swift` | API routing to Titan microservices |
+| `APIManager.swift` | HTTP client using Alamofire |
+| `Config.swift` | API keys (Google Places, etc.) |
+| `Podfile` | Dependency management |
+
+---
+
+## 🐛 Troubleshooting
+
+### "CocoaPods not found"
+```bash
+sudo gem install cocoapods
+```
+
+### "Build failed - Signing error"
+In Xcode:
+1. Select project in navigator
+2. Select target
+3. Signing & Capabilities tab
+4. Change Team to your Apple ID
+
+### "Can't connect to backend"
+Make sure Titan services are running:
+```bash
+docker ps | grep titan
+# Should show 8 services running
+```
+
+### "Auth0 login not working"
+1. Check Auth0 callback URL is configured in Auth0 dashboard:
+   - `com.titanwallet.consumer://callback`
+2. Verify credentials in AppMetaData.json
+
+---
+
+## 🚢 Deployment
+
+### TestFlight
+
+1. Archive app (Product → Archive)
+2. Upload to App Store Connect
+3. Submit for TestFlight review
+
+### App Store
+
+1. Update version in Xcode
+2. Create release in App Store Connect
+3. Submit for review
+
+---
+
+## 📖 Additional Documentation
+
+- **API Integration Guide:** `/docs/API_INTEGRATION_GUIDE.md`
+- **Mobile Fork Strategy:** `/docs/MOBILE_APP_FORK_STRATEGY.md`
+- **Rebranding Cleanup:** `/docs/REBRANDING_CLEANUP_GUIDE.md`
+
+---
+
+**Titan Wallet** - The future of payments is instant ⚡
